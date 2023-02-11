@@ -1,0 +1,18 @@
+package com.example.security.event;
+
+import com.example.security.entity.User;
+import lombok.Getter;
+import lombok.Setter;
+import org.springframework.context.ApplicationEvent;
+
+@Getter
+@Setter
+public class RegistrationCompleteEvent extends ApplicationEvent {
+    private User user;
+    private String applicationUrl;
+    public RegistrationCompleteEvent(User User, String applicationUrl) {
+        super(User);
+        this.user = User;
+        this.applicationUrl = applicationUrl;
+    }
+}
